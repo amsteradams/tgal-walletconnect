@@ -1,0 +1,41 @@
+#title{
+    width:fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Playfair Display';
+    margin:2%;
+}
+
+#title img{ 
+    width:80%;
+}
+#title-down{
+    display: flex;
+    flex-direction: column;
+    line-height: 200%;
+}
+#the{
+    opacity: 1;
+    color: white;
+    font-size: 2em;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0px;
+    text-align: left;
+    font-weight: bolder;
+    margin:0px;
+
+}
+
+#gallery{
+    opacity: 1;
+    color:white;
+    font-size: 3em;
+    font-weight:900;
+    font-style: normal;
+    letter-spacing: 0px;
+    text-align: left;
+    margin:0px;
+}   

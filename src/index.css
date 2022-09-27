@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,8 +6,35 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--blue-prussian);
+  color:white;
+  font-size: 'Playfair Display', 'sans serif';
 }
 
+:root{
+  font-size: 16px;
+         /*COLORS :*/
+         --blue-prussian: #00263A;
+         --gray-web: #7C7C7C;
+         --medium-turquoise: #33C7B6;
+         --air-blue:#669BBC;
+         --black:#252525;
+         --davys-grey:#515151;
+         --quick-silver:#a8a8a8;
+         --light-grey:#d3d3d3;
+         --maximum-red:#d62828;
+         --platinum:#e9e9e9;
+         --salmon:#FD866C;
+ 
+     /*FONT SIZE*/
+ 
+     --titre : 4em;
+     --sous-titre: 2.25em;
+     --text-article: 1.32em;
+     --text:1.5em;
+     --button-text: 1em;
+     --petit: 0.9em;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
