@@ -1,9 +1,13 @@
 import { useMoralis, useChain } from 'react-moralis';
 import './App.css';
 import Title from './components/Title';
+import { useNFTBalances } from "react-moralis";
+
 
 function App() {
+  const { getNFTBalances, data, error, isLoading, isFetching } = useNFTBalances();
   const {isAuthenticated, authenticate, user, logout} = useMoralis()
+
   const {chain} = useChain();
   const logoutDapp = async () => {
     try {
@@ -19,10 +23,11 @@ function App() {
         signingMessage:"Auth required"
       })
     } catch (error) {
-      console.error(error)
+      alert(error)
     }
   }
   const metamaskConnect = async () => {
+    if (typeof window.ethereum !== 'undefined') {
     try {
       await authenticate({
         provider:"metamask",
@@ -31,6 +36,9 @@ function App() {
     } catch (error) {
       console.error(error);
     }
+  }else{
+    window.location.replace('https://metamask.io/download/');
+  }
   }
   console.log(isAuthenticated); //check if a user is authenticated
   if(!isAuthenticated){
@@ -44,17 +52,21 @@ function App() {
       </div>
     </div>
   )
-  }
+  }else{
   return (
     <div className="App">
       <Title />
+      <p id='address'>{user.get('ethAddress').slice(0,10)}...</p>
       <div id='ctn'>
-        <p>Wallet address : {user.get('ethAddress')}</p>
-        <p>Chain : {chain ? chain.name : "error to retrieve the chain"}</p>
-        <button onClick={logoutDapp}>Log out</button>
+           Nft balance :{data !== null ? data.total : ""} 
       </div>
+      <button id='logout' onClick={logoutDapp}>logout</button>
+        {/* <p>Wallet address : {user.get('ethAddress')}</p>
+        <p>Chain : {chain ? chain.name : "error to retrieve the chain"}</p>
+        <button onClick={logoutDapp}>Log out</button> */}
     </div>
   );
+}
 }
 
 export default App;

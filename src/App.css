@@ -65,3 +65,21 @@
   font-family: 'Playfair Display';
   font-weight: bold;
 }
+
+#address{
+  position: absolute;
+  top:1%;
+  right:1%;
+  border:1px solid white;
+  padding: 0.5%;
+  border-radius: 50px;
+  color:var(--blue-prussian);
+  background-color: white;
+  cursor: pointer;
+}
+
+#address:hover{
+  background-color: var(--blue-prussian);
+  border:1px solid white;
+  color:white;
+}
